@@ -1,18 +1,6 @@
-// import { NextAuthOptions } from 'next-auth';
-// import CredentialsProvider from 'next-auth/providers/credentials';
+import NextAuth from 'next-auth/next';
+import { authOptions } from './options';
 
-// export const authOptions: NextAuthOptions = {
-// 	providers: [
-// 		CredentialsProvider({
-// 			id: 'Credentials',
-// 			name: 'Credentials',
-// 			credentials: {
-// 				email: { label: 'Email', type: 'email' },
-// 				password: { label: 'Password', type: 'password' },
-// 			},
-// 			async authorize(credentials, req): Promise<void> {
+const handler = NextAuth(authOptions);
 
-// 			},
-// 		}),
-// 	],
-// };
+export { handler as GET, handler as POST };
